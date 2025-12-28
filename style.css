@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(120deg, #f3e8ff, #faf5ff);
+    color: #2d033b;
+    scroll-behavior: smooth;
+}
+
+/* Header */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(106, 13, 173, 0.85);
+    backdrop-filter: blur(10px);
+    color: #fff;
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 1.4rem;
+}
+
+header nav a {
+    color: #fff;
+    margin-left: 25px;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+}
+
+header nav a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #ffd6ff;
+    left: 0;
+    bottom: -5px;
+    transition: 0.3s;
+}
+
+header nav a:hover::after {
+    width: 100%;
+}
+
+/* Hero */
+.hero {
+    min-height: 90vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    color: black;
+}
+
+/* Doodle background */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("doodle.jpg") center/cover no-repeat;
+    opacity: 0.25; /* controls visibility */
+    z-index: 0;
+}
+
+/* Purple overlay */
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(157, 78, 221, 0.55);
+    z-index: 1;
+}
+
+/* Keep text above background */
+.hero h2,
+.hero p,
+.hero a {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h2 {
+    font-size: 3rem;
+    animation: fadeDown 1s ease;
+    color: #000000; /* Black */
+}
+
+
+
+.hero p {
+    max-width: 500px;
+    margin-top: 15px;
+    opacity: 0.9;
+}
+
+.btn {
+    margin-top: 30px;
+    padding: 14px 30px;
+    background: linear-gradient(45deg, #c77dff, #9d4edd);
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(157, 78, 221, 0.4);
+}
+
+/* Sections */
+section {
+    padding: 90px 60px;
+    text-align: center;
+}
+
+section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+    color: #6a0dad;
+}
+
+/* About */
+#about p {
+    max-width: 750px;
+    margin: auto;
+    line-height: 1.8;
+}
+
+/* Skills */
+.skills-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.skills-container span {
+    margin: 12px;
+    padding: 12px 22px;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 20px rgba(106, 13, 173, 0.15);
+    transition: transform 0.3s;
+}
+
+.skills-container span:hover {
+    transform: scale(1.1);
+}
+
+/* Projects */
+#projects {
+    background: linear-gradient(to bottom, #faf5ff, #f3e8ff);
+}
+
+.project-card {
+    margin: 30px auto;
+    padding: 30px;
+    max-width: 800px;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(90, 24, 154, 0.2);
+    transition: transform 0.4s, box-shadow 0.4s;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(90, 24, 154, 0.35);
+}
+
+.project-card h3 {
+    color: #6a0dad;
+}
+
+/* Contact */
+#contact p {
+    margin: 12px 0;
+}
+
+/* Footer */
+footer {
+    background: #2d033b;
+    color: white;
+    padding: 25px;
+}
+
+/* Animations */
+@keyframes fadeDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    section {
+        padding: 70px 25px;
+    }
+
+    .hero h2 {
+        font-size: 2.2rem;
+    }
+}
+/* ===== Decorative Blobs (Only 3) ===== */
+.hero {
+    position: relative;
+    overflow: hidden;
+}
+
+.blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(90px);
+    opacity: 0.6;
+    animation: floatBlob 8s ease-in-out infinite;
+}
+
+/* Top-left blob */
+.blob1 {
+    width: 380px;
+    height: 380px;
+    background: #9d4edd;
+    top: -120px;
+    left: -120px;
+}
+
+/* Bottom-right blob */
+.blob2 {
+    width: 420px;
+    height: 420px;
+    background: #c77dff;
+    bottom: -150px;
+    right: -150px;
+    animation-delay: 2s;
+}
+
+/* Center-right blob */
+.blob3 {
+    width: 260px;
+    height: 260px;
+    background: #7b2cbf;
+    top: 45%;
+    right: 12%;
+    animation-delay: 4s;
+}
+
+@keyframes floatBlob {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-25px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
